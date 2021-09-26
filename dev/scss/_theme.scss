@@ -1,0 +1,40 @@
+:root {
+  font-size: 16px;
+  --bg: hsl(190 30% 97%);
+  --stroke-color: hsl(220 10% 60%);
+
+  --header-height: 4.5rem;
+  --navbar-height: 4rem;
+  --animable-navbar-height: 4rem;
+}
+
+@font-face {
+  font-family: "Roboto";
+  font-weight: 400;
+  font-style: normal;
+  src:
+    local("Roboto"), local("Roboto-Regular"),
+    url(../fonts/Roboto/Roboto-Regular.woff2) format("woff2"),
+    url(../fonts/Roboto/Roboto-Regular.ttf) format("ttf");
+  font-display: fallback;
+}
+@font-face {
+  font-family: "Roboto";
+  font-weight: 700;
+  font-style: normal;
+  src:
+    local("Roboto Bold"), local("Roboto-Bold"),
+    url(../fonts/Roboto/Roboto-Bold.woff2) format("woff2"),
+    url(../fonts/Roboto/Roboto-Bold.ttf) format("ttf");
+  font-display: fallback;
+}
+@font-face {
+  font-family: "Roboto";
+  font-weight: 500;
+  font-style: normal;
+  src:
+    local("Roboto Medium"), local("Roboto-Medium"),
+    url(../fonts/Roboto/Roboto-Medium.woff2) format("woff2"),
+    url(../fonts/Roboto/Roboto-Medium.ttf) format("ttf");
+  font-display: fallback;
+}

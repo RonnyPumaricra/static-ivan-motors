@@ -1,0 +1,7 @@
+header.header-page
+  a(href="/").logo IvanMotor
+  nav.navbar
+    each pageInfo in pagesList
+      a(href=pageInfo.url).nav-link
+        +svg-icon(pageInfo.svgId, "nav-icon")
+        = pageInfo.name

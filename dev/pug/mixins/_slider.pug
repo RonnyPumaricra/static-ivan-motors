@@ -1,0 +1,21 @@
+//- Screen: {
+//-   img,
+//-   title,
+//-   desc,
+//- }
+mixin slider(screens)
+  .slider-container.no-js
+    .screens-container
+      each screen, i in screens
+        -
+          const {styles, title, desc, img} = screen
+          let inlineStyle = ""
+          for (const key in styles) inlineStyle += `${key}:${styles[key]};`
+          
+        .slide(style=inlineStyle)
+          img(src=img, alt="")
+          h3= title
+          p= desc
+    .controls
+      button.prev Prev
+      button.next Next

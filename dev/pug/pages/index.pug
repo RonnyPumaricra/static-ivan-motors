@@ -1,0 +1,24 @@
+extends ../config/_layout.pug
+append headVariables
+  -
+    title = "Inicio"
+
+block main
+  section.home-banner
+    h1 IvanMotors
+    p.banner-desc Lorem ipsum dolor sit amet consectetur, adipisicing elit. Tempore dicta non inventore ipsum voluptatibus reiciendis architecto quae quaerat cumque nostrum!
+    img.banner-img(
+      src="media/Dog.jpg",
+      alt="A dog on a garden",
+      width="100%",
+    )
+  section.sect-services
+    h2 Servicios
+    p Lorem ipsum dolor, sit amet consectetur adipisicing elit. Praesentium unde itaque saepe pariatur, perferendis enim corrupti cum soluta eius, harum tempore culpa sunt earum!
+    a(href="/servicios").btn Ir a servicios
+  section.sect-contact
+    h2 Contáctanos 
+    p Lorem ipsum dolor sit amet, consectetur adipisicing elit. Maiores, dolorum. Quidem aliquam debitis ut maiores nam ab voluptate, necessitatibus saepe voluptates! Atque ea assumenda consequuntur id fugit possimus ex accusamus deserunt dignissimos?
+    .btn-wrapper
+      a(href="/contacto").btn Ver datos de contacto
+      a(href="/contacto").btn.ghost Ubícanos

@@ -1,0 +1,39 @@
+.home-banner {
+  background: hsl(220, 80%, 60%);
+
+  --pad: 2rem;
+
+  @include setSeparation();
+  padding-bottom: var(--pad);
+  padding-top: calc(var(--pad) + var(--header-height));
+
+  display: grid;
+
+  grid-template-columns: 1fr;
+  gap: 2rem;
+
+  // .image-placeholder {
+  //   width: 200px;
+  //   height: 200px;
+  // }
+
+  .banner-img {
+    margin-left: auto;
+    margin-right: auto;
+
+    width: calc(min(100%, 500px));
+  }
+
+  .banner-desc {
+    margin-top: auto;
+    margin-bottom: auto;
+  }
+
+  @media screen and (min-width: 800px) {
+    grid-template-columns: 1fr 1fr;
+
+    .banner-img {
+      width: 100%;
+    }
+  }
+}

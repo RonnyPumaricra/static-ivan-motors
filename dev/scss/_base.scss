@@ -1,0 +1,152 @@
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+}
+
+body {
+  // The footer is always at the bottom
+  display: flex;
+  flex-direction: column;
+    // min-height: calc(100vh - var(--header-height));
+  min-height: calc(100vh - var(--animable-navbar-height));
+  
+  // Deleted because it causes bad behavior
+  // margin-bottom: var(--animable-navbar-height);
+  
+  @media screen and (min-width: 800px) {
+    min-height: 100vh;
+    margin-bottom: 0;
+  }
+  font-family: "Roboto", sans-serif;
+  line-height: 1.5;
+
+  background: var(--bg, white);
+  transition: --animable-navbar-height .2s;
+  --animable-navbar-height: 4rem;
+  &.on-scroll {
+    --animable-navbar-height: 0px;
+  }
+}
+
+
+a {
+  text-decoration: none;
+
+  // Nav ítems styling
+  &.nav-link {
+    color: currentColor;
+
+
+    display: flex;
+    @media screen and (max-width: 799px) {
+      flex-direction: column;
+      font-size: .8rem;
+    }
+    @media screen and (min-width: 800px) {
+      flex-direction: row;
+      align-items: center;
+      font-size: 1em;
+      gap: .5rem;
+    }
+
+  }
+  &:hover, &:focus {
+    text-decoration: underline;
+  }
+}
+
+section {
+  padding: 3rem;
+  @include setSeparation();
+
+  display: flex;
+  flex-direction: column;
+  // align-items: center;
+
+  flex-wrap: nowrap;
+  gap: 1.5rem;
+
+  width: 100%;
+
+  & > p, & > h2, & > ul {
+    // width: 100%;
+  }
+  // @media screen and (min-width: 800px) {
+  //   flex-direction: row;
+  //   justify-content: space-around;
+  //   flex-wrap: wrap;
+  // }
+}
+
+h1 {
+  text-align: center;
+  .home-banner & {
+    grid-column: 1 / -1;
+  }
+}
+
+h2 {
+  font-size: 2rem;
+  // margin-bottom: .75em;
+  @media screen and (min-width: 800px) {
+    font-size: 2.4rem;
+  }
+}
+
+p {
+  font-size: 1rem;
+  // margin-bottom: .75em;
+  @media screen and (min-width: 800px) {
+    font-size: 1.2rem;
+  }
+}
+
+a.btn {
+  // Each section specifies the Hue
+  --color: hsl(var(--hue) 80% 60%);
+  // --secondary: white;
+
+  font-size: 1.1em;
+  font-weight: 500;
+
+  border: .2em solid var(--color);
+  background: var(--color);
+  color: white;
+  
+  // Button
+  display: inline-block;
+  padding: .3em .6em;
+  border-radius: .3em;
+
+  align-self: center;
+
+  @media screen and (min-width: 800px) {
+    font-size: 1.4em;    
+  }
+
+  transition: background .2s;
+
+  &:hover {
+    --color: hsl(var(--hue) 100% 55%);
+    text-decoration: none;
+  }
+
+  &.ghost {
+    background: var(--secondary, white);
+    color: var(--color);
+    &:hover {
+      background: var(--color);
+      color: white;
+    }
+  }
+}
+
+.btn-wrapper {
+  align-self: center;
+  display: flex;
+  gap: 1.5rem;
+}
+
+section.separation {
+  @include setSeparation();
+}

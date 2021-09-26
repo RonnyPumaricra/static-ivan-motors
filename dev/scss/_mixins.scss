@@ -1,0 +1,14 @@
+// Set separation
+:root {
+  --sep: 1rem;
+  @media screen and (min-width: 800px) {
+    --sep: calc(16vw - 80px);
+  }
+  @media screen and (min-width: 1400px) {
+    --sep: calc(50vw - (700px - 9rem));
+  }
+}
+@mixin setSeparation {
+  padding-left: var(--sep);
+  padding-right: var(--sep);
+}

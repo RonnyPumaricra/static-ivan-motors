@@ -1,0 +1,109 @@
+// ===== Basic =====
+.header-page {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  
+  display: flex;
+  gap: 6rem;
+
+  z-index: 999999999;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  font-size: 2em;
+  font-weight: 700;
+
+  color: currentColor;
+}
+
+
+.nav-icon {
+  height: 2rem;
+  fill: currentColor;
+}
+
+// ===== Animating stuff =====
+.header-page {
+  color: black;
+  background: white;
+  height: var(--header-height);
+  // --logo-size: 2rem;
+  font-size: 1rem;
+
+  box-shadow: 0 -.2em var(--stroke-color) inset;
+
+  transition-property: color, background-color, height, font-size, box-shadow;
+  transition-duration: .2s;
+}
+
+body.top-page .header-page {
+  color: white;
+  background: transparent;
+  box-shadow: 0 -.2em transparent inset;
+}
+
+body.on-scroll .header-page {
+  height: calc(var(--header-height) - 1.4rem);
+  font-size: .8rem;
+}
+
+// ===== Mobile =====
+@media screen and (max-width: 799px) {
+  // Separated from header
+  .navbar {
+    position: fixed;
+    // top: calc(var(--vh, 1vh) * 100 - var(--navbar-height));
+    bottom: 0;
+    width: 100%;
+    height: var(--navbar-height);
+    
+    
+    color: black;
+    background: white;
+    
+    @include setSeparation();
+    
+    align-items: center;
+    display: flex;
+    justify-content: space-around;
+
+    box-shadow: 0 1.5px var(--stroke-color) inset;
+  }
+
+  // Animating stuff
+  .navbar {
+    transform: translateY(calc(var(--navbar-height) - var(--animable-navbar-height)));
+    // transform: translateY(calc(20px));
+  }
+
+
+
+  .nav-link {
+    display: flex;
+  }
+  .nav-icon {
+    height: 1.7rem;
+  }
+  .logo {
+    @include setSeparation();
+  }
+}
+
+// Laptop & desktop
+@media screen and (min-width: 800px) {
+  .header-page {
+    @include setSeparation();
+  }
+  .logo {
+    padding: 0;
+  }
+  .navbar {
+    display: flex;
+    gap: 2rem;
+    font-size: 1em;
+  }
+}

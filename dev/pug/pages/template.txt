@@ -1,0 +1,6 @@
+extends ../config/_layout.pug
+append headVariables
+  -
+    title = "Título de la página"
+
+block main

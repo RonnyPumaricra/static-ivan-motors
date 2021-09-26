@@ -1,0 +1,27 @@
+.footer-page {
+  margin-top: auto;
+
+  background: hsl(220 10% 40%);
+  padding: 1.5rem;
+
+  color: hsl(220 30% 95%);
+
+  @include setSeparation();
+
+  li {
+    display: flex;
+    align-items: center;
+  }
+
+  .foot-icon {
+    height: 1.5em;
+  }
+
+  a {
+    color: currentColor;
+    text-decoration: underline;
+    &:hover {
+      text-decoration: none;
+    }
+  }
+}

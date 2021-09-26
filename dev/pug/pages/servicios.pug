@@ -1,0 +1,18 @@
+extends ../config/_layout.pug
+append headVariables
+  -
+    title = "Servicios"
+    jsAdditionalSource = "services.js"
+
+block main
+  include ../includes/_banner.pug
+  section.slider-sect
+    +slider(servicesData)
+    noscript.noscript-slider
+      | Es necesario que active JavaScript para ver el contenido de este componente.
+  section.separation
+    p Nosotros ofrecemos una amplia variedad de servicios, entre ellos los siguientes:
+    ul
+      li Reparación
+      li Limpieza de motor
+      li Cambiar repuestos
