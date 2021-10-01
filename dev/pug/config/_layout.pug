@@ -1,5 +1,5 @@
 include ./_variables.pug
-include ./_svg-icons.pug
+include ../mixins/_svg-icons.pug
 include ../mixins/_slider.pug
 block headVariables
   -
@@ -10,7 +10,7 @@ html(lang="es")
   head
     meta(charset="UTF-8")
     meta(name="viewport", content="width=device-width, initial-scale=1.0")
-    title= `${title} - IvanMotors`
+    title= `${title} - IvanMotor`
     link(rel="stylesheet", href="css/index.css")
     
     if jsAdditionalSource

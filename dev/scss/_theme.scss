@@ -30,6 +30,16 @@
 }
 @font-face {
   font-family: "Roboto";
+  font-weight: 900;
+  font-style: normal;
+  src:
+    local("Roboto Black"), local("Roboto-Black"),
+    url(../fonts/Roboto/Roboto-Black.woff2) format("woff2"),
+    url(../fonts/Roboto/Roboto-Black.ttf) format("ttf");
+  font-display: fallback;
+}
+@font-face {
+  font-family: "Roboto";
   font-weight: 500;
   font-style: normal;
   src:

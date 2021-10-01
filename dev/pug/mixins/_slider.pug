@@ -13,9 +13,13 @@ mixin slider(screens)
           for (const key in styles) inlineStyle += `${key}:${styles[key]};`
           
         .slide(style=inlineStyle)
-          img(src=img, alt="")
+          if (img)
+            img(src=img, alt="")
           h3= title
-          p= desc
+          if (desc)
+            p= desc
     .controls
-      button.prev Prev
-      button.next Next
+      button.prev
+        +arrow-left("icon")
+      button.next 
+        +arrow-right("icon")

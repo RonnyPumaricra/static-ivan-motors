@@ -13,16 +13,22 @@ block main
     .personal-data-wrapper
       .data
         h3 Correo electrónico de la empresa
-        p contacto@ivanmotors.com
+        p
+          +svg-icon(5, "data-icon")
+          | contacto@ivanmotors.com
         a(href="mailto:contacto@ivanmotors.com").btn Enviar correo
       .data
         h3 Correo electrónico
-        p pumaricrareinan@gmail.com
+        p
+          +svg-icon(4, "data-icon")
+          | pumaricrareinan@gmail.com
         a(href="mailto:pumaricrareinan@gmail.com").btn Enviar correo
 
       .data
         h3 Número telefónico / WhatsApp
-        p (+51) 950900590
+        p
+          +svg-icon(3, "data-icon")
+          | (+51) 950900590 
         a(href="tel:+51950900590").btn Llamar ahora
 
   section.location

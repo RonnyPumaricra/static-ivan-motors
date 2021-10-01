@@ -20,28 +20,31 @@ try {
 let globalScroll = scrollY
 
 // Set initial class to body
-if (globalScroll == 0)
-    body.classList.add("top-page")
+if (globalScroll == 0) {
+  body.classList.add("top-page")
+}
 
 
-// "on-scrolling" means that the user is scrolling down
 function toggleOnScroll() {
   let currScroll = scrollY
 
+  
+  // scroll hacia abajo
+  if (currScroll > globalScroll) {
+    body.classList.add("on-scroll")
+  }
+
+  // scroll hacia arriba
+  else if (currScroll < globalScroll) {
+    body.classList.remove("on-scroll")
+  }
+  
   body.classList.remove("top-page")
   
-  // Scrolling down
-  if (currScroll > globalScroll)
-    body.classList.add("on-scroll")
-    
-  // Scrolling up
-  else if (currScroll < globalScroll)
-    body.classList.remove("on-scroll")
-  
-  if (currScroll == 0)
+  if (currScroll == 0) {
     body.classList.add("top-page")
-    
-    globalScroll = scrollY
+  }
+  globalScroll = scrollY
 }
 
-addEventListener("scroll", toggleOnScroll)
+window.addEventListener("scroll", toggleOnScroll)

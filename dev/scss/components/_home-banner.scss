@@ -17,16 +17,27 @@
   //   height: 200px;
   // }
 
+  .logo-title {
+    font-size: 3rem;
+    letter-spacing: -0.1ch;
+  }
+
   .banner-img {
     margin-left: auto;
     margin-right: auto;
 
     width: calc(min(100%, 500px));
+    max-width: 250px;
   }
 
   .banner-desc {
     margin-top: auto;
     margin-bottom: auto;
+
+    font-weight: 500;
+    font-size: 1.5rem;
+
+    color: white;
   }
 
   @media screen and (min-width: 800px) {
