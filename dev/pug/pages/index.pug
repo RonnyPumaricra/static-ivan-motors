@@ -4,21 +4,33 @@ append headVariables
     title = "Inicio"
 
 block main
-  section.home-banner
+  section.home.banner
     h1.logo-title IvanMotor
+    hr
     p.banner-desc Tenemos más de 10 años de experiencia en reparación y mantenimiento de vehículos automotores
-    img.banner-img(
-      src="media/reparacion.png",
-      alt="A dog on a garden",
-      width="100%",
-    )
-  section.sect-services
-    h2 Servicios
-    p Conoce todos nuestros servicios que ofrecemos a nuestros clientes.
-    a(href="/servicios").btn Ir a servicios
-  section.sect-contact
-    h2 Contáctanos 
-    p Programa una cita, pide auxilio mecánico o trae tu vehículo revisando todos nuestros datos de contacto.
-    .btn-wrapper
-      a(href="/contacto").btn Ver datos de contacto
-      a(href="/contacto").btn.ghost Ubícanos
+  //- section.sect-services
+  //-   h2 Servicios
+  //-   p Conoce todos nuestros servicios que ofrecemos a nuestros clientes.
+  //-   a(href="/servicios").btn Ir a servicios
+  //- section.sect-contact
+  //-   h2 Contáctanos 
+  //-   p Programa una cita, pide auxilio mecánico o trae tu vehículo revisando todos nuestros datos de contacto.
+  //-   .btn-wrapper
+  //-     a(href="/contacto").btn Ver datos de contacto
+  //-     a(href="/contacto").btn.ghost Ubícanos
+  main.three-card-columns
+    article.card-component
+      div.card-data
+        h3 Servicios
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, nemo.
+      a(href="/servicios.html").btn.ghost Ver servicios
+    article.card-component.highlighted
+      div.card-data
+        h3 Contáctanos
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, nemo.
+      a(href="/contacto.html").btn Ver formulario de contacto
+    article.card-component
+      div.card-data
+        h3 Ubícanos
+        p Lorem ipsum dolor sit amet consectetur adipisicing elit. Blanditiis, nemo.
+      a(href="/ubicacion.html").btn.ghost Ver mapa

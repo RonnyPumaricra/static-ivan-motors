@@ -1,68 +1,3 @@
-// Useful functions
-// function assignAttrs(elem, attrs) {
-//   for (const attr in attrs) {
-//     const val = attrs[attr]
-//     elem.setAttribute(attr, val)
-//   }
-// }
-
-// function createCustomElem(tag, attrs, text) {
-//   const elem = document.createElement(tag)
-//   assignAttrs(elem, attrs)
-
-//   if (text !== undefined) {
-//     elem.textContent = text
-//   }
-
-//   return elem
-// }
-
-// function writeSingleService({serviceName, imgUrl}) {
-//   const attrs = {
-//     class: "service-card"
-//   }
-//   const LabelAttrs = {
-//     class: "service-card__label"
-//   }
-//   const ImgAttrs = {
-//     class: "service-card__img",
-//     url: imgUrl
-//   }
-
-//   const ServiceWrapper = createCustomElem("div", attrs)
-//   const ServiceLabel   = createCustomElem("h2", LabelAttrs, serviceName)
-//   const ServiceImg     = createCustomElem("img", ImgAttrs)
-
-//   ServiceWrapper.appendChild(ServiceLabel)
-//   ServiceWrapper.appendChild(ServiceImg)
-
-//   return ServiceWrapper
-// }
-
-
-
-// const services = [
-//   {
-//     serviceName: "Reparación",
-//     imgUrl: "/static/media/Dog.jpg"
-//   },
-//   {
-//     serviceName: "Cambiar repuestos",
-//     imgUrl: "/static/media/Dog.jpg"
-//   },
-//   {
-//     serviceName: "Limpieza del motor",
-//     imgUrl: "/static/media/Dog.jpg"
-//   },
-// ]
-
-// Slider behavior
-// Existe un contador de n segundos, cuando el contador llega al límite, cambia de slide.
-// Si el usuario hace click en "atrás" o "adelante", se cambia de slide y el contador se reinicia.
-
-// console.log(writeSingleService(services[0]))
-
-
 const SliderBox = document.querySelector(".slider-container")
 const SlidesContainer = SliderBox.querySelector(".screens-container")
 const getSlides = () => Array.from(SlidesContainer.querySelectorAll(".slide"))
@@ -85,10 +20,7 @@ function disableControls(cooldown) {
 }
 
 
-/**
- * 
- * @param {number} distance Valores: 1, -1
- */
+// distance: sólo -1 o 1
 function changePosition(distance) {
   const goesForward = distance == 1
 

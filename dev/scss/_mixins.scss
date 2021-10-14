@@ -1,6 +1,9 @@
 // Set separation
 :root {
-  --sep: 1rem;
+  --sep: .5rem;
+  @media screen and (min-width: 300px) {
+    --sep: 2rem;
+  }
   @media screen and (min-width: 800px) {
     --sep: calc(16vw - 80px);
   }

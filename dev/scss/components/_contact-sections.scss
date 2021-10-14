@@ -1,54 +1,89 @@
-.googlemap_iframe {
-  max-width: 100%;
-}
+.contact-section {
+  display: block;
 
-.location {
-  background: hsl(202 100% 80%);
-  position: relative;
-}
 
-.personal-data {
-  --hue: 205;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 
-  a.btn {
-    align-self: flex-start;
+  .contact-list {
+    display: block;
+    padding-left: .75rem;
+    margin-top: 1rem;
+    & > li {
+      display: flex;
+      margin-bottom: .5em;
+    }
+    svg {
+      height: 1.5rem;
+      margin-right: .5rem;
+      flex-shrink: 0;
+    }
+    a {
+      color: black;
+      font-weight: 500;
+      text-decoration: underline;
+      &:hover {
+        text-decoration: none;
+      }
+    }
+  }
+  .location.btn {
+    --hue: 210deg;
   }
 }
 
-.personal-data-wrapper {
-  --cols-count: 1;
-  display: grid;
-  grid-template-columns: repeat(var(--cols-count), 1fr);
-  gap: 2rem;
+.contact-form {
+  margin-top: 1rem;
 
-  @media screen and (min-width: 800px), (orientation: landscape) {
-    --cols-count: 2;
-  }
-
-  .data {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-  }
-  a.btn {
+  input[type="text"], textarea {
+    // display: block;
     font-size: 1rem;
-    --hue: 40deg;
+    margin-top: .25em;
+    margin-bottom: .85em;
+    padding: .25em .5em;
+
+    border-radius: .25rem;
+    border: solid .15rem hsl(0deg 0% 48%);
+
+    &:focus {
+      border-color: hsl(220deg 100% 50%);
+      outline: none;
+    }
   }
+
+  textarea {
+    max-height: 300px;
+    min-height: 100px;
+    width: 350px;
+    max-width: 100%;
+    // max-width: 100%;
+    display: block;
+    resize: vertical;
+  }
+
   p {
-    display: flex;
-    justify-content: flex-start;
-    align-items: center;
-    gap: 1rem;
-    font-size: 1rem;
+    font-weight: 500;
+    label {
+      cursor: pointer;
+    }
   }
-  .data-icon {
-    height: 1.3em;
+  button.btn {
+    --hue: 210;
   }
 }
 
-#ubicacion {
-  position: absolute;
-  opacity: 0;
-  top: calc(var(--header-height) * -1);
-  left: 0;
+@media screen and (min-width: 300px) {
+  .contact-section {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+  }
+}
+@media screen and (min-width: 800px) {
+  .contact-section {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+  }
 }

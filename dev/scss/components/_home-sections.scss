@@ -1,9 +1,88 @@
-.sect-services {
-  --hue: 200;
+.three-card-columns {
+  padding: 0;
+  gap: 0;
+
+  font-size: 1.15rem;
+
+  .card-component {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    
+    padding: 2.5rem 1rem;
+    
+    gap: .5rem;
+
+    max-width: 450px;
+    margin: auto;
+
+    h3 {
+      font-size: 1.25rem;
+    }
+
+    .card-data {
+      display: flex;
+      flex-direction: column;
+      gap: .5rem;
+    }
+
+    .btn {
+      --hue: 210deg;
+      font-size: 1.25rem;
+      padding: .25em .5em;
+    }
+  }
+
+  .card-component.highlighted {
+    background: hsl(200deg 100% 92%);
+    // border-radius: 1rem;
+  }
 }
 
-.sect-contact {
-  background: hsl(45 80% 87%);
-  --hue: 30;
-  --secondary: hsl(45 80% 87%);
+@media screen and (min-width: 300px) {
+  .three-card-columns {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    @include setSeparation();
+    
+    .card-component {
+      padding: 1.5rem 1rem;
+      gap: 2rem;
+
+      h3 {
+        font-size: 1.5rem;
+      }
+
+      .card-data {
+        gap: 1rem;
+      }
+
+      &.highlighted {
+        border-radius: 1rem;
+      }
+    }
+  }
+}
+@media screen and (min-width: 800px) {
+  .three-card-columns {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0;
+
+
+    .card-component {
+      height: 100%;
+      padding: 2rem 1.75rem;
+      
+      gap: 3rem;
+
+      max-width: 300px;
+
+      justify-content: space-between;
+
+      h3 {
+        font-size: 1.65rem;
+      }
+    }
+  }
 }

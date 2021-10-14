@@ -14,7 +14,7 @@ mixin slider(screens)
           
         .slide(style=inlineStyle)
           if (img)
-            img(src=img, alt="")
+            .img-wrapper: img(src=img, alt="")
           h3= title
           if (desc)
             p= desc

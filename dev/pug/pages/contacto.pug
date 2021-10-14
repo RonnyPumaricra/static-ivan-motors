@@ -6,73 +6,45 @@ append headVariables
 block main
   include ../includes/_banner.pug
 
-  section.personal-data
-    h2 Datos de contacto
-    p Usa estos datos para contactar a la empresa, tanto por Gmail como por WhatsApp o teléfono.
+  main.contact-section
+    div
+      h2 Detalles de contacto
+      p Reinan Ivan Pumaricra Segura
+      p: i - Gerente de IvanMotor
+      ul.contact-list
+        li
+          +svg-icon(3)
+          a(href="tel:+51950900590") (+51) 950 900 590
+        li
+          +svg-icon(5)
+          a(href="mailto:contacto@ivanmotor.com") contacto@ivanmotor.com
+        li
+          +svg-icon(4)
+          a(href="mailto:pumaricrareinan@gmail.com") pumaricrareinan@gmail.com
+      h3 Horario de atención
+      p Lunes a sábado: de 8:00am a 6:00pm
+      h3 Ubicación
+      a(href="ubicacion.html").location.btn.ghost Ver mapa
 
-    .personal-data-wrapper
-      .data
-        h3 Correo electrónico de la empresa
-        p
-          +svg-icon(5, "data-icon")
-          | contacto@ivanmotors.com
-        a(href="mailto:contacto@ivanmotors.com").btn Enviar correo
-      .data
-        h3 Correo electrónico
-        p
-          +svg-icon(4, "data-icon")
-          | pumaricrareinan@gmail.com
-        a(href="mailto:pumaricrareinan@gmail.com").btn Enviar correo
 
-      .data
-        h3 Número telefónico / WhatsApp
-        p
-          +svg-icon(3, "data-icon")
-          | (+51) 950900590 
-        a(href="tel:+51950900590").btn Llamar ahora
 
-  section.location
-    #ubicacion
-    h2 Ubícanos
-    h3 Mapa por GoogleMaps
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3899.21460390653!2d-76.94740098464683!3d-12.23374364873908!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105bbcb0ca42143%3A0xbb6bd4fd31f6dd3c!2sIvanMotor!5e0!3m2!1ses-419!2spe!4v1627145979355!5m2!1ses-419!2spe" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" class="googlemap_iframe"></iframe>
-
-    h3 Dirección exacta
-    p Villa El Salvador, Lima. Mz. D Lote 4, La Encantada Gp. 1
-
-  //- section
-  //-   form(action="/submitted", method="POST")
-  //-     div
-  //-       label
-  //-         p Nombres y apellidos
-  //-         input(
-  //-           placeholder="Manuel Pérez",
-  //-           name="username"
-  //-           required
-  //-           autocomplete="off"
-  //-         )
-  //-       label
-  //-         p Correo electrónico
-  //-         input(
-  //-           placeholder="alguien@lugar.com"
-  //-           name="usermail"
-  //-           required
-  //-           autocomplete="off"
-  //-         )
-  //-     div
-  //-       label
-  //-         p Asunto
-  //-         input(
-  //-           name="subject"
-  //-           placeholder="Opcional"
-  //-           autocomplete="off"
-  //-         )
-  //-       label
-  //-         p Mensaje
-  //-         textarea(
-  //-           placeholder="..."
-  //-           name="message"
-  //-           required
-  //-           autocomplete="off"
-  //-         )
-  //-     button Enviar
+    div
+      h2 Formulario de contacto
+      p: i Todos los campos son obligatorios
+      
+      form.contact-form
+        p: label(for="name-input") Nombres
+        input#name-input(
+          type="text",
+          placeholder="Ruy López",
+          autocomplete="off"
+        )
+        p: label(for="mail-input") Correo electrónico
+        input#mail-input(
+          type="text",
+          placeholder="someone@example.com",
+          autocomplete="email"
+        )
+        p: label(for="message-input") Mensaje
+        textarea#message-input()
+        button.btn Enviar

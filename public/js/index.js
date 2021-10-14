@@ -1,6 +1,6 @@
 const body = document.body
 
-// Useful link:
+// Link:
 // https://www.joshwcomeau.com/react/rainbow-button/#animated-custom-properties
 
 try {
@@ -12,7 +12,7 @@ try {
   })
   
 } catch (e) {
-  console.error("Your browser does not support CSS.registerProperty")
+  console.error("El navegador no soporta CSS.registerProperty")
 }
 
 
